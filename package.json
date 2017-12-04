@@ -1,0 +1,14 @@
+{
+  "name": "JSProject",
+  "version": "1.0.0",
+  "description": "Players will need to guide a ball to roll into the goal by\r drawing a path for the ball.  The game will feature multiple\r levels and unlimited attempts to roll the ball into the goal.",
+  "main": "bundle.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
