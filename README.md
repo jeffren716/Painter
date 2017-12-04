@@ -19,6 +19,26 @@ the player drew, then the level will be complete and the player will move onto a
 * Vanilla JS for physics, collision, and game logic
 * three.js for rendering
 
+## Timeline and Implementation
+
+1. Day 1
+- [ ] Be able to draw and erase on the canvas
+- [ ] Have the ball and the goal render on the canvas
+
+2. Day 2
+- [ ] Work on physics engine
+
+3. Day 3
+- [ ] Finish physics engine
+- [ ] Start on collision
+
+4. Day 4
+- [ ] Finish collision
+- [ ] Add multiple levels
+
+5. Day 5
+- [ ] Style the page
+
 ## Bonus features
 
 * Allow the player to control the ball
