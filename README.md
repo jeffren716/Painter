@@ -19,7 +19,8 @@ the player drew, then the level will be complete and the player will move onto a
 ## Architecture and Technology
 
 * Vanilla JS for physics, collision, and game logic
-* three.js for rendering
+* canvas for rendering
+* webpack to bundle
 
 ## Timeline and Implementation
 
