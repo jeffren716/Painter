@@ -8,6 +8,8 @@ levels and unlimited attempts to roll the ball into the goal.
 
 ## Wireframes
 
+![level](https://imgur.com/4mgwBaj.png)
+
 The game will consist of a single screen where a player will
 use their mouse to draw a path for the ball to travel towards
 the goal.  On the press of a button, ball will be influenced by
