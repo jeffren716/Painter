@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "Players will need to guide a ball to roll into the goal by\r drawing a path for the ball.  The game will feature multiple\r levels and unlimited attempts to roll the ball into the goal.",
   "main": "bundle.js",
-  "dependencies": {},
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "matter-js": "^0.14.0",
+    "webpack": "^3.10.0"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

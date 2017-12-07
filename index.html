@@ -3,13 +3,35 @@
   <head>
     <meta charset="utf-8">
     <title>Roll Goal</title>
-    <style>
-      * { padding: 0, margin: 0; }
-      canvas { background: white; display: block; margin: 0 auto; border: 2px solid black;}
-    </style>
-    <canvas id='myCanvas' width="1280" height="720"></canvas>
-    <script src='bundle.js'></script>
+    <link rel='stylesheet' href='./lib/draw.css'/>
   </head>
   <body>
+    <div class='buttons'>
+      <button class='black'>Button</button>
+      <button class='black'>Button</button>
+      <button class='black'>Button</button>
+    </div>
+    <canvas id='myCanvas' width='800' height='600'></canvas>
+    <script src='./lib/draw.js'></script>
+    <div class='text'>
+      <p>
+        It looks like you're trying to paint.
+      </p>
+      <br>
+      <p>
+        Would you like help?
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/jeffren716">Github</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/jeffrey-ren/">LinkedIn</a>
+        </li>
+      </ul>
+    </div>
+    <div class='clippy'>
+      <img src='assets/clippy.png'/>
+    </div>
   </body>
 </html>

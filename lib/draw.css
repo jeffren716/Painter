@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  background-color: gray;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  margin-right: 0;
+}
+
+#myCanvas {
+  padding: 0;
+  background: white;
+  margin: 0 auto;
+  margin-left: 0;
+  display: block;
+  border: 2px solid black;
+}
+
+.text {
+  background-color: cornsilk;
+  height: 130px;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-left: 5px;
+}
+
+.text p {
+  margin: 0px 5px;
+}
+
+.text a:hover {
+  color: blue;
+}
+
+.clippy {
+  align-items: center;
+}
+
+.clippy img {
+  height: 115px;
+}
