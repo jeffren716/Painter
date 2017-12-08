@@ -82,6 +82,18 @@ let lineColor = 'black',
 
 let line = [];
 
+const colorButton = document.getElementsByClassName('colorButton');
+for (var i = 0; i < colorButton.length; i++) {
+  colorButton.item(i).onclick = event => {
+    console.log(event.target.id);
+    lineColor = event.target.id;
+  };
+}
+// colorButton.onclick = (event) => {
+//   console.log('clicked');
+//   lineColor = event.target.class;
+// };
+
 // function init() {
 //   canvas.addEventListener('mousemove', (event) => {
 //     draw('move', event);
@@ -139,6 +151,7 @@ canvas.ontouchstart = event => {
 canvas.onmousemove = event => {
   if (paint) {
     ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+    ctx.strokeStyle = lineColor;
     ctx.stroke();
   }
 };
@@ -173,10 +186,10 @@ canvas.onmousemove = event => {
   if (paint) {
     ctx.beginPath();
 
-
     for (var i = -brushSize; i < brushSize; i++) {
       ctx.moveTo(line[0] + i, line[1] + i);
       ctx.lineTo(event.clientX + i - canvas.offsetLeft, event.clientY + i - canvas.offsetTop);
+      ctx.strokeStyle = lineColor;
       ctx.stroke();
     }
 
@@ -192,6 +205,7 @@ canvas.ontouchmove = event => {
     for (var i = -brushSize; i < brushSize; i++) {
       ctx.moveTo(line[0] + i, line[1] + i);
       ctx.lineTo(event.touches[0].clientX + i - canvas.offsetLeft, event.touches[0].clientY + i - canvas.offsetTop);
+      ctx.strokeStyle = lineColor;
       ctx.stroke();
     }
 
@@ -206,12 +220,6 @@ canvas.onmouseup = () => {
 canvas.ontouchend = () => {
   paint = false;
 };
-
-function handleColorClick(event) {
-  lineColor = (event.target.class);
-}
-
-document.getElementById('black')
 
 //
 // function fill(event) {
