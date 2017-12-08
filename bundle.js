@@ -98,12 +98,11 @@ let line = [];
 //
 // }
 
-
+// Pen
 canvas.onmousedown = event => {
   paint = true;
   ctx.lineWidth = brushSize;
   ctx.lineJoin = 'round';
-  ctx.lineCap = 'round';
   ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
 };
 
@@ -118,39 +117,102 @@ canvas.onmouseup = () => {
   paint = false;
 };
 
-// function color(colorString) {
-//   switch (colorString) {
-//   case 'black':
-//     lineColor = 'black';
-//     break;
-//   case 'red':
-//     lineColor = 'red';
-//     break;
-//   case 'orange':
-//     lineColor = 'orange';
-//     break;
-//   case 'yellow':
-//     lineColor = 'yellow';
-//     break;
-//   case 'green':
-//     lineColor = 'green';
-//     break;
-//   case 'blue':
-//     lineColor = 'blue';
-//     break;
-//   case 'purple':
-//     lineColor = 'purple';
-//     break;
-//   case 'white':
-//     lineColor = 'white';
-//     break;
-//   default:
-//     lineColor = 'black';
-//     break;
-//
-//   }
-//
-// }
+// Spray paint
+canvas.onmousedown = event => {
+  paint = true;
+  ctx.lineWidth = brushSize;
+  ctx.lineJoin = 'round';
+  ctx.shadowBlur = 10;
+  ctx.shadowColor = lineColor;
+  ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+};
+
+canvas.ontouchstart = event => {
+  paint = true;
+  ctx.lineWidth = brushSize;
+  ctx.lineJoin = 'round';
+  ctx.shadowBlur = 10;
+  ctx.shadowColor = lineColor;
+  ctx.moveTo(event.touches[0].clientX - canvas.offsetLeft, event.touches[0].clientY - canvas.offsetTop);
+};
+
+canvas.onmousemove = event => {
+  if (paint) {
+    ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+    ctx.stroke();
+  }
+};
+
+canvas.ontouchmove = event => {
+  if (paint) {
+    ctx.lineTo(event.touches[0].clientX - canvas.offsetLeft, event.touches[0].clientY - canvas.offsetTop);
+    ctx.stroke();
+  }
+};
+
+canvas.onmouseup = () => {
+  paint = false;
+};
+
+canvas.ontouchend = () => {
+  paint = false;
+};
+
+// Chisel
+canvas.onmousedown = event => {
+  paint = true;
+  line = [event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop];
+};
+
+canvas.ontouchstart = event => {
+  paint = true;
+  line = [event.touches[0].clientX - canvas.offsetLeft, event.touches[0].clientY - canvas.offsetTop];
+};
+
+canvas.onmousemove = event => {
+  if (paint) {
+    ctx.beginPath();
+
+
+    for (var i = -brushSize; i < brushSize; i++) {
+      ctx.moveTo(line[0] + i, line[1] + i);
+      ctx.lineTo(event.clientX + i - canvas.offsetLeft, event.clientY + i - canvas.offsetTop);
+      ctx.stroke();
+    }
+
+    line = [event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop];
+  }
+};
+
+canvas.ontouchmove = event => {
+  if (paint) {
+    ctx.beginPath();
+
+
+    for (var i = -brushSize; i < brushSize; i++) {
+      ctx.moveTo(line[0] + i, line[1] + i);
+      ctx.lineTo(event.touches[0].clientX + i - canvas.offsetLeft, event.touches[0].clientY + i - canvas.offsetTop);
+      ctx.stroke();
+    }
+
+    line = [event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop];
+  }
+};
+
+canvas.onmouseup = () => {
+  paint = false;
+};
+
+canvas.ontouchend = () => {
+  paint = false;
+};
+
+function handleColorClick(event) {
+  lineColor = (event.target.class);
+}
+
+document.getElementById('black')
+
 //
 // function fill(event) {
 //   let dx = currX - prevX;
