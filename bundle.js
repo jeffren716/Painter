@@ -96,7 +96,7 @@ for (var i = 0; i < sizeButton.length; i++) {
   }
 }
 
-const eraseButton = document.getElementById('white')
+const eraseButton = document.getElementById('white');
 eraseButton.onclick = event => {
   lineColor = 'white';
   canvas.onmousedown = event => {
@@ -118,6 +118,11 @@ eraseButton.onclick = event => {
     paint = false;
   };
 
+}
+
+const eraseAllButton = document.getElementById('eraseAll');
+eraseAllButton.onclick = () => {
+  erase();
 }
 
 // const penButton = document.getElementById('pen');
@@ -356,6 +361,13 @@ function spiderWeb() {
     line = [];
   };
 }
+
+function erase() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+}
+
+
+
 //
 // function fill(event) {
 //   let dx = currX - prevX;
