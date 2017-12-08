@@ -78,7 +78,7 @@ let prevX = 0,
   dot_paint = false;
 
 let lineColor = 'black',
-  brushSize = 1;
+  brushSize = 3;
 
 let line = [];
 
@@ -120,15 +120,17 @@ eraseButton.onclick = event => {
 
 }
 
-const penButton = document.getElementById('pen');
-penButton.onclick = () => {
-  pen();
-}
+// const penButton = document.getElementById('pen');
+// penButton.onclick = () => {
+//   pen();
+// }
+//
+// const sprayButton = document.getElementById('spray');
+// sprayButton.onclick = () => {
+//   sprayPaint();
+// }
 
-const sprayButton = document.getElementById('spray');
-sprayButton.onclick = () => {
-  sprayPaint();
-}
+chisel();
 
 const chiselButton = document.getElementById('chisel');
 chiselButton.onclick = () => {
@@ -307,7 +309,7 @@ function spiderWeb() {
           ctx.beginPath();
           ctx.strokeStyle = lineColor;
           ctx.moveTo(line[line.length - 1].x + (dx * 0.2), line[line.length - 1].y + (dy * 0.2));
-          ctx.lineTo(line[i].x - (dx * 0.2), line[i].y - (dy * 0.2));
+          ctx.lineTo(line[i].x - (dx * (brushSize / 10)), line[i].y - (dy * (brushSize / 10)));
           ctx.stroke();
         }
 
