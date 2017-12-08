@@ -152,6 +152,7 @@ function pen() {
   canvas.onmousemove = event => {
     if (paint) {
       ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+      ctx.strokeStyle = lineColor;
       ctx.stroke();
     }
   };
@@ -159,6 +160,7 @@ function pen() {
   canvas.ontouchmove = event => {
     if (paint) {
       ctx.lineTo(event.touches[0].clientX - canvas.offsetLeft, event.touches[0].clientY - canvas.offsetTop);
+      ctx.strokeStyle = lineColor;
       ctx.stroke();
     }
   };
