@@ -78,7 +78,7 @@ let prevX = 0,
   dot_paint = false;
 
 let lineColor = 'black',
-  brushSize = 5;
+  brushSize = 1;
 
 let line = [];
 
@@ -89,10 +89,16 @@ for (var i = 0; i < colorButton.length; i++) {
   };
 }
 
+const sizeButton = document.getElementsByClassName('sizeButton');
+for (var i = 0; i < sizeButton.length; i++) {
+  sizeButton.item(i).onclick = event => {
+    brushSize = parseInt(event.target.id);
+  }
+}
+
 const eraseButton = document.getElementById('white')
 eraseButton.onclick = event => {
   lineColor = 'white';
-  brushSize = 50;
   canvas.onmousedown = event => {
     paint = true;
     ctx.lineWidth = brushSize;
@@ -177,24 +183,19 @@ function pen() {
 function sprayPaint() {
   canvas.onmousedown = event => {
     paint = true;
-    ctx.lineWidth = brushSize;
-    ctx.lineJoin = 'round';
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = lineColor;
-    ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
   };
 
   canvas.ontouchstart = event => {
     paint = true;
-    ctx.lineWidth = brushSize;
-    ctx.lineJoin = 'round';
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = lineColor;
-    ctx.moveTo(event.touches[0].clientX - canvas.offsetLeft, event.touches[0].clientY - canvas.offsetTop);
   };
 
   canvas.onmousemove = event => {
     if (paint) {
+      ctx.lineWidth = brushSize;
+      ctx.lineJoin = 'round';
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = lineColor;
+      ctx.moveTo(event.touches[0].clientX - canvas.offsetLeft, event.touches[0].clientY - canvas.offsetTop);
       ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
       ctx.strokeStyle = lineColor;
       ctx.stroke();
@@ -203,6 +204,11 @@ function sprayPaint() {
 
   canvas.ontouchmove = event => {
     if (paint) {
+      ctx.lineWidth = brushSize;
+      ctx.lineJoin = 'round';
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = lineColor;
+      ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
       ctx.lineTo(event.touches[0].clientX - canvas.offsetLeft, event.touches[0].clientY - canvas.offsetTop);
       ctx.stroke();
     }
@@ -348,8 +354,6 @@ function spiderWeb() {
     line = [];
   };
 }
-
-
 //
 // function fill(event) {
 //   let dx = currX - prevX;
@@ -382,12 +386,12 @@ function spiderWeb() {
 //
 // }
 //
-// // function erase() {
-// //   let message = confirm('Want to clear?');
-// //   if (message) {
-// //     ctx.clearRect(0, 0, canvas.width, canvas.height);
-// //   }
-// // }
+// function erase() {
+//   let message = confirm('Want to clear?');
+//   if (message) {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//   }
+// }
 //
 // function draw(res, event, drawX, drawY) {
 //   if (res == 'down') {

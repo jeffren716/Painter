@@ -1,4 +1,4 @@
-# Draw to the goal
+# Painter
 
 ## Background and overview
 

@@ -43,3 +43,66 @@ body {
 .clippy img {
   height: 115px;
 }
+
+button {
+  width: 100%;
+  height: 5%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#black {
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: black;
+}
+
+#red {
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: red;
+}
+
+#orange {
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: orange;
+}
+
+#yellow {
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: yellow;
+}
+
+#green {
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: green;
+}
+
+#blue {
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: blue;
+}
+
+#purple {
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: purple;
+}
+
+#white {
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: pink;
+}
