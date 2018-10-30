@@ -1,4 +1,4 @@
-# Painter
+# [Painter](https://jeffren716.github.io/Painter/)
 
 ## Background and overview
 
@@ -13,7 +13,7 @@ touch support.
 
 ## Timeline and Implementation
 
-Currently a work in progress.  
+Created as a one week challenge.  
 
 ## Bonus features
 
