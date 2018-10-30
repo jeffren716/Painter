@@ -1,11 +1,15 @@
 body {
-  display: flex;
   background-color: gray;
   margin-top: 3vh;
 }
 
 .title {
   font-family: 'Permanent Marker', cursive;
+  font-size: 24px;
+}
+
+.content {
+  display: flex;
 }
 
 .buttons {
