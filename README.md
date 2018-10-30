@@ -1,5 +1,7 @@
 # [Painter](https://jeffren716.github.io/Painter/)
 
+![Painter](https://i.imgur.com/Ve4Gu7x.png)
+
 ## Background and overview
 
 Users can paint with a variety of colors, sizes, and brushes.  Also features
