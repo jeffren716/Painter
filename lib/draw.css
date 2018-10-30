@@ -4,6 +4,10 @@ body {
   margin-top: 3vh;
 }
 
+.title {
+  font-family: 'Permanent Marker', cursive;
+}
+
 .buttons {
   display: flex;
   flex-direction: column;
